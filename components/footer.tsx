@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Facebook, Linkedin, Twitter, Phone, Mail, MapPin } from 'lucide-react'
+import { Instagram, Facebook, Linkedin, Twitter, Phone, Mail, MapPin, XIcon } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -19,19 +19,10 @@ const socialLinks = [
     icon: Linkedin,
   },
  {
-  label: 'X',
-  href: 'https://x.com/rowadtechsol',
-  icon: () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"  
-      className="w-5 h-5"
-      fill="currentColor"
-    >
-      <path d="M18.901 1H22.5L14.36 10.31L24 23H16.406L10.406 15.3L3.5 23H0L8.64 13.09L0 1H7.781L13.219 8.02L18.901 1Z" />
-    </svg>
-  ),
-}
+    label: 'X',
+    href: 'https://x.com/rowadtechsol',
+    icon: XIcon,
+  },
 ]
 
 const footerLinks = [

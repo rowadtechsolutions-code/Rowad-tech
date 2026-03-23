@@ -41,11 +41,7 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
       dir={isAr ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* 👇 التعديل هنا */}
         <div className="flex items-center h-16 lg:h-20 gap-6">
-          
-          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo.svg"
@@ -57,7 +53,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             />
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1 mr-auto">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
@@ -82,7 +77,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             })}
           </nav>
 
-          {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
@@ -93,19 +87,16 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
-            className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+            className="lg:hidden mr-auto p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden mobile-menu bg-white/98 navbar-blur border-t border-border ${
           menuOpen ? 'open' : ''

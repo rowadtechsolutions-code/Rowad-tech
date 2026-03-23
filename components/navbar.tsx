@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -42,7 +42,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo.svg"
@@ -54,7 +53,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             />
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
@@ -79,14 +77,7 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             })}
           </nav>
 
-          {/* CTA + Lang Toggle */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/en"
-              className="text-xs font-medium text-muted-foreground hover:text-primary px-2 py-1 border border-border rounded-md transition-colors"
-            >
-              EN
-            </Link>
             <Link
               href="/contact"
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
@@ -96,7 +87,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
             className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
@@ -107,7 +97,6 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden mobile-menu bg-white/98 navbar-blur border-t border-border ${
           menuOpen ? 'open' : ''

@@ -114,9 +114,9 @@ export default function HeroSection() {
           {/* Trust indicators */}
           <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground animate-fade-in-up delay-500">
             {[
-              { num: '50+', label: 'مشروع منجز' },
-              { num: '30+', label: 'عميل سعيد' },
-              { num: '5+', label: 'سنوات خبرة' },
+              { num: '∞', label: 'إمكانيات بلا حدود' },
+              { num: '100%', label: 'تركيز على الجودة' },
+              { num: '24/7', label: 'شغف بالتطوير' },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-2">
                 <span className="text-xl font-bold text-[#1F3292]">{stat.num}</span>

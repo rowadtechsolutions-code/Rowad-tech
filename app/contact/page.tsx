@@ -7,7 +7,7 @@ import ScrollAnimator from '@/components/scroll-animator'
 import PageLoader from '@/components/page-loader'
 import { Phone, Mail, Send, CheckCircle2, Instagram, Facebook, Linkedin } from 'lucide-react'
 
-const XIcon = ({ size = 20 }: { size?: number }) => (
+const XIcon = ({ size = 18 }: { size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

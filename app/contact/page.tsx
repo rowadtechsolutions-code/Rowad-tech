@@ -5,40 +5,32 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import ScrollAnimator from '@/components/scroll-animator'
 import PageLoader from '@/components/page-loader'
-import { Phone, Mail, Send, CheckCircle2, Instagram, Facebook, Linkedin } from 'lucide-react'
-
-const XIcon = ({ size = 20 }: { size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width={size}
-    height={size}
-    fill="currentColor"
-  >
-    <path d="M18.901 1H22.5L14.36 10.31L24 23H16.406L10.406 15.3L3.5 23H0L8.64 13.09L0 1H7.781L13.219 8.02L18.901 1Z" />
-  </svg>
-)
+import { Phone, Mail, Send, CheckCircle2, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react'
 
 const socialLinks = [
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/rowad.information.tech/',
     icon: Instagram,
+    color: '#E1306C',
   },
   {
     label: 'Facebook',
     href: 'https://www.facebook.com/profile.php?id=61588453614906',
     icon: Facebook,
+    color: '#1877F2',
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/%D8%B1%D9%88%D8%A7%D8%AF-%D9%84%D9%84%D8%AD%D9%84%D9%88%D9%84-%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9/',
     icon: Linkedin,
+    color: '#0A66C2',
   },
   {
-    label: 'X',
+    label: 'X (Twitter)',
     href: 'https://x.com/rowadtechsol',
-    icon: XIcon,
+    icon: Twitter,
+    color: '#000000',
   },
 ]
 
@@ -53,7 +45,6 @@ export default function ContactPage() {
     if (!form.name.trim()) e.name = 'الاسم مطلوب'
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = 'البريد الإلكتروني غير صحيح'
-    if (!form.phone.trim()) e.phone = 'رقم الهاتف مطلوب'
     if (!form.message.trim()) e.message = 'الرسالة مطلوبة'
     return e
   }
@@ -65,46 +56,12 @@ export default function ContactPage() {
       setErrors(errs)
       return
     }
-
     setErrors({})
     setSubmitting(true)
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '9c483fff-837a-4326-bb0e-751cee933a39',
-          subject: 'رسالة جديدة من موقع رواد للحلول التقنية',
-          from_name: form.name,
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          to: 'rowad.tech.solutions@gmail.com',
-        }),
-      })
-
-      const data = await res.json()
-
-      if (data.success) {
-        setSubmitted(true)
-        setForm({ name: '', email: '', phone: '', message: '' })
-      } else {
-        setErrors({
-          submit: 'حدث خطأ أثناء الإرسال، حاول مرة أخرى.',
-        })
-      }
-    } catch {
-      setErrors({
-        submit: 'تعذر إرسال الرسالة حاليًا، حاول مرة أخرى.',
-      })
-    } finally {
-      setSubmitting(false)
-    }
+    await new Promise((r) => setTimeout(r, 1500))
+    setSubmitting(false)
+    setSubmitted(true)
+    setForm({ name: '', email: '', phone: '', message: '' })
   }
 
   return (
@@ -214,7 +171,8 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={s.label}
-                        className="p-3 rounded-xl border border-border bg-white hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md text-[#1F3292]"
+                        className="p-3 rounded-xl border border-border bg-white hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md"
+                        style={{ color: s.color }}
                       >
                         <s.icon size={20} />
                       </a>
@@ -225,7 +183,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="TikTok"
-                      className="p-3 rounded-xl border border-border bg-white hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md text-[#1F3292]"
+                      className="p-3 rounded-xl border border-border bg-white hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md text-foreground"
                     >
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
@@ -317,7 +275,7 @@ export default function ContactPage() {
                         {/* Phone */}
                         <div>
                           <label className="block text-sm font-medium text-foreground mb-1.5">
-                            رقم الهاتف <span className="text-red-500">*</span>
+                            رقم الهاتف <span className="text-muted-foreground text-xs font-normal">(اختياري)</span>
                           </label>
                           <input
                             type="tel"
@@ -325,13 +283,8 @@ export default function ContactPage() {
                             onChange={(e) => setForm({ ...form, phone: e.target.value })}
                             placeholder="+968 XXXXXXXX"
                             dir="ltr"
-                            className={`form-input w-full px-4 py-3 rounded-xl border bg-background text-foreground placeholder:text-muted-foreground text-sm text-right ${
-                              errors.phone ? 'border-red-400' : 'border-border'
-                            }`}
+                            className="form-input w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm text-right"
                           />
-                          {errors.phone && (
-                            <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
-                          )}
                         </div>
 
                         {/* Message */}
@@ -352,10 +305,6 @@ export default function ContactPage() {
                             <p className="text-red-500 text-xs mt-1">{errors.message}</p>
                           )}
                         </div>
-
-                        {errors.submit && (
-                          <p className="text-red-500 text-sm">{errors.submit}</p>
-                        )}
 
                         {/* Submit */}
                         <button

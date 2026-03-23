@@ -18,11 +18,20 @@ const socialLinks = [
     href: 'https://www.linkedin.com/company/%D8%B1%D9%88%D8%A7%D8%AF-%D9%84%D9%84%D8%AD%D9%84%D9%88%D9%84-%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9/',
     icon: Linkedin,
   },
-  {
-    label: 'X',
-    href: 'https://x.com/rowadtechsol',
-    icon: Twitter,
-  },
+ {
+  label: 'X',
+  href: 'https://x.com/rowadtechsol',
+  icon: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 1227"
+      className="w-5 h-5"
+      fill="currentColor"
+    >
+      <path d="M714.163 519.284L1160.89 0H1054.52L667.137 450.887L358.372 0H0L468.492 682.169L0 1226.37H106.372L515.518 749.723L841.628 1226.37H1200L714.137 519.284H714.163ZM570.055 687.828L522.325 618.921L143.58 73.694H306.615L611.189 512.978L658.919 581.885L1054.59 1152.78H891.555L570.055 687.828Z" />
+    </svg>
+  ),
+}
 ]
 
 const footerLinks = [

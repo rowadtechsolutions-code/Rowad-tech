@@ -20,31 +20,66 @@ export const metadata: Metadata = {
     default: 'رواد للحلول التقنية | Rowad Technology Solutions',
     template: '%s | رواد للحلول التقنية',
   },
+
   description:
-    'شركة رواد للحلول التقنية – متخصصة في تطوير تطبيقات ومواقع وأنظمة ذكية. Rowad Technology Solutions – specialized in mobile apps, websites, and smart systems.',
-  keywords:
-    'Rowad Technology, رواد للحلول التقنية, تطوير تطبيقات, web development, mobile apps, Oman tech, UX design',
+    'شركة رواد للحلول التقنية في عمان، متخصصة في تطوير تطبيقات الجوال، تصميم المواقع، والأنظمة الذكية. نقدم حلول رقمية مبتكرة تساعد عملك على النمو.',
+
+  keywords: [
+    'رواد للحلول التقنية',
+    'Rowad Technology Solutions',
+    'تطوير تطبيقات في عمان',
+    'تصميم مواقع',
+    'شركة برمجة',
+    'UX UI Design',
+  ],
+
   authors: [{ name: 'Rowad Technology Solutions' }],
+  creator: 'Rowad Technology Solutions',
+
   openGraph: {
     title: 'رواد للحلول التقنية | Rowad Technology Solutions',
     description: 'تقنية تصنع الفارق – Technology that makes a difference',
     locale: 'ar_OM',
     type: 'website',
+    url: 'https://your-domain.com',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Rowad Technology Solutions',
+      },
+    ],
   },
+
   twitter: {
     card: 'summary_large_image',
     site: '@rowadtechsol',
+    title: 'رواد للحلول التقنية',
+    description: 'تقنية تصنع الفارق',
+    images: ['/og-image.jpg'],
   },
+
   icons: {
-    icon: [
-      { url: '/favicon.png', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.png', type: 'image/png' }],
     apple: '/favicon.png',
     shortcut: '/favicon.png',
   },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  alternates: {
+    canonical: 'https://your-domain.com',
   },
 }
 

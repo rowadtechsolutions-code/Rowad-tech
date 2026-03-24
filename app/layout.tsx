@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'Rowad Technology Solutions' }],
   creator: 'Rowad Technology Solutions',
 
+  verification: {
+    google: 'k6WUmIYSJHkhlA',
+  },
+
   openGraph: {
     title: 'رواد للحلول التقنية | Rowad Technology Solutions',
     description: 'تقنية تصنع الفارق – Technology that makes a difference',

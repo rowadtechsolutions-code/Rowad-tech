@@ -26,6 +26,8 @@ export const metadata: Metadata = {
 
   keywords: [
     'رواد للحلول التقنية',
+    'رواد للحلول التقنيةشركة برمجة في عمان',
+    'شركة رواد للحلول التقنية',
     'Rowad Technology Solutions',
     'تطوير تطبيقات في عمان',
     'تصميم مواقع',
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
     description: 'تقنية تصنع الفارق – Technology that makes a difference',
     locale: 'ar_OM',
     type: 'website',
-    url: 'https://your-domain.com',
+    url: 'https://www.rowadtechsolutions.com',
     images: [
       {
         url: '/og-image.jpg',
@@ -79,7 +81,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://www.rowadtechsolutions.com',
   },
 }
 

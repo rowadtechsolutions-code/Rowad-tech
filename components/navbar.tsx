@@ -35,13 +35,13 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/70 backdrop-blur-xl shadow-md border-b border-white/20'
+          ? 'bg-white/80 backdrop-blur-lg shadow-md border-b border-white/20'
           : 'bg-transparent'
       }`}
       dir={isAr ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-20 lg:h-24 gap-8">
+        <div className="flex items-center h-20 lg:h-24 justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -55,7 +55,7 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 mr-auto">
+          <nav className="hidden lg:flex items-center gap-2 mr-auto">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
               return (
@@ -69,8 +69,8 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
                       isActive
                         ? 'text-[#1F3292]'
                         : scrolled
-                        ? 'text-foreground/80 group-hover:text-[#1F3292]'
-                        : 'text-foreground/90 group-hover:text-[#1F3292]'
+                        ? 'text-gray-700 group-hover:text-[#1F3292]'
+                        : 'text-gray-900 group-hover:text-[#1F3292]'
                     }`}
                   >
                     {isAr ? link.labelAr : link.labelEn}
@@ -103,7 +103,7 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
-            className="lg:hidden mr-auto p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -113,11 +113,11 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden mobile-menu bg-white/80 backdrop-blur-xl border-t border-white/20 overflow-hidden transition-all duration-400 ${
-          menuOpen ? 'max-h-[500px]' : 'max-h-0'
-        }`}
+        className={`lg:hidden origin-top transition-transform duration-300 ease-out transform ${
+          menuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'
+        } bg-white/90 backdrop-blur-lg border-t border-white/20`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => {
             const isActive = pathname === link.href
             return (
@@ -126,8 +126,8 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
                 href={link.href}
                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                   isActive
-                    ? 'bg-[#1F3292]/5 text-[#1F3292] font-semibold'
-                    : 'text-foreground/80 hover:bg-muted hover:text-[#1F3292]'
+                    ? 'bg-[#1F3292]/10 text-[#1F3292] font-semibold'
+                    : 'text-gray-800 hover:bg-gray-100 hover:text-[#1F3292]'
                 }`}
               >
                 {isAr ? link.labelAr : link.labelEn}
@@ -136,7 +136,8 @@ export default function Navbar({ lang = 'ar' }: { lang?: 'ar' | 'en' }) {
           })}
           <Link
             href="/contact"
-            className="mt-2 mb-1 px-5 py-3 rounded-xl text-sm font-semibold text-white text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-[1px] active:scale-95"
+            className="mt-2 px-5 py-3 rounded-xl text-sm font-semibold text-white text-center 
+                       transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-[1px] active:scale-95"
             style={{ background: 'linear-gradient(135deg, #1F3292, #9F27D6)' }}
           >
             {isAr ? 'ابدأ مشروعك' : 'Start Project'}

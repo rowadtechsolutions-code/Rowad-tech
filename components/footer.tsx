@@ -190,13 +190,13 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li>
                   <a
-                    href="tel:+96876972871"
+                    href="tel:+96877685747"
                     className="group flex items-start gap-3 text-sm text-muted-foreground hover:text-[#1F3292] transition-colors"
                   >
                     <span className="mt-0.5 p-1.5 rounded-lg bg-[#1F3292]/8 group-hover:bg-[#1F3292]/15 transition-colors flex-shrink-0" style={{ background: 'rgba(31,50,146,0.07)' }}>
                       <Phone size={13} className="text-[#1F3292]" />
                     </span>
-                    <span dir="ltr">+968 76972871</span>
+                    <span dir="ltr">+968 77685747</span>
                   </a>
                 </li>
                 <li>

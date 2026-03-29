@@ -199,7 +199,7 @@ export default function ContactPage() {
                 {/* Contact cards */}
                 <div className="space-y-4">
                   <a
-                    href="tel:+96876972871"
+                    href="tel:+96877685747"
                     className="flex items-center gap-4 p-5 rounded-2xl border border-border bg-white service-card group"
                   >
                     <div
@@ -210,7 +210,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-xs text-muted-foreground mb-0.5">الهاتف</div>
-                      <div className="font-semibold text-foreground" dir="ltr">+968 76972871</div>
+                      <div className="font-semibold text-foreground" dir="ltr">+968 77685747</div>
                     </div>
                   </a>
 

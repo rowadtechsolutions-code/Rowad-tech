@@ -35,24 +35,24 @@ export default function ContactCta() {
               <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
             </Link>
             <a
-              href="tel:+96876972871"
+              href="tel:+96877685747"
               className="flex items-center gap-2 px-8 py-4 rounded-xl font-semibold border-2 border-[#1F3292]/30 text-[#1F3292] hover:border-[#1F3292] hover:bg-[#1F3292]/5 transition-all duration-200"
               dir="ltr"
             >
               <Phone size={18} />
-              +968 76972871
+              +968 77685747
             </a>
           </div>
 
           {/* Contact info chips */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <a
-              href="tel:+96876972871"
+              href="tel:+96877685747"
               className="flex items-center gap-2 hover:text-primary transition-colors"
               dir="ltr"
             >
               <Phone size={15} className="text-[#1F3292]" />
-              +968 76972871
+              +968 77685747
             </a>
             <span className="text-border">|</span>
             <a
